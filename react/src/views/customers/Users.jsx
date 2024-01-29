@@ -20,7 +20,7 @@ export default function Users() {
 
             // Check if the request was successful
             if (response.status === 201) {
-                console.log("Request successful:", response.data);
+
 
                 // Show success message using toastr
                 toast.success("Customer created successfully", {
@@ -34,8 +34,7 @@ export default function Users() {
                     theme: "colored",
                 });
             } else {
-                // If the request was not successful, log the response and show an error message
-                console.error("Request failed:", response);
+
 
                 toast.error(`Something went wrong. Please try again.`, {
                     position: "bottom-right",
@@ -49,8 +48,7 @@ export default function Users() {
                 });
             }
         } catch (error) {
-            // Handle network errors or other exceptions
-            console.error("Error:", error);
+
 
             toast.error(`Something went wrong: ${error.message}`, {
                 position: "bottom-right",

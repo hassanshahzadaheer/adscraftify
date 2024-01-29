@@ -22,7 +22,7 @@ class WebsiteController extends Controller
      */
     public function index()
     {
-        $websites = Website::with('customer')->orderBy('id', 'desc')->paginate(10);
+        $websites = Website::with('customer.user')->orderBy('id', 'desc')->paginate(10);
         return WebsiteResource::collection($websites);
     }
 

@@ -49,6 +49,12 @@ export default function SideBar() {
                 </span>
                                 <span className="hide-menu">Websites</span>
                             </Link>
+                            <Link to="/list-websites" className="sidebar-link" aria-expanded="false">
+    <span>
+        <i className="ti ti-user"></i>
+    </span>
+                                <span className="hide-menu">List Websites</span>
+                            </Link>
                         </li>
                         <li className="sidebar-item">
                             <Link to="/reports" className="sidebar-link" aria-expanded="false">

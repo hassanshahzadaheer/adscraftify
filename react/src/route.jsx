@@ -5,7 +5,8 @@ import SignUp from "./views/SignUp";
 import NotFound from "./views/NotFound";
 import Users from "./views/customers/Users.jsx";
 import ListCustomers from "./views/customers/ListCustomers.jsx";
-import Website from './views/Website';
+import Website from './views/websites/Website.jsx';
+import ListWebsites from "./views/websites/ListWebsites.jsx"
 import Reports from './views/Reports';
 import Invoice from './views/Invoice';
 import AccountInfo from './views/AccountInfo';
@@ -30,6 +31,11 @@ const routes = [
             {
                 path:'/list-customers',
                 element: <ListCustomers />,
+
+            },
+            {
+                path:'/list-websites',
+                element: <ListWebsites />,
 
             },
             {
