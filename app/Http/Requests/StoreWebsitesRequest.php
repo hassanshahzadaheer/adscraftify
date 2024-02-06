@@ -26,8 +26,8 @@ class StoreWebsitesRequest extends FormRequest
         return [
             'customer_id' => 'required|exists:customers,id',
             'url' => 'required|url',
-            'alexa_rank' => 'nullable|integer|min:0',
-            'country' => 'nullable|string|max:255',
+            'alexa_rank' => 'required|integer|min:0',
+            'country' => 'required|string|max:255',
         ];
     }
 }

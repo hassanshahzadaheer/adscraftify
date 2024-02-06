@@ -16,8 +16,6 @@ export default function Website() {
                     name: user.user.name
                 }));
 
-                // Log the extracted usernames
-
                 setUsers(userNames);
             })
             .catch(error => {
@@ -29,18 +27,63 @@ export default function Website() {
             });
     }, []);
 
-    const onSubmit = (data) => {
-        axiosClient.post("/websites", data)
-            .then(response => {
-                // Handle success
-                toast.success("Website added successfully");
-            })
-            .catch(error => {
-                // Handle error
-                console.error("Error adding website:", error);
-                toast.error("Failed to add website");
+    const onSubmit = async (data) => {
+        try {
+            // Add the selected user's ID to the data
+            const userData = { ...data, customer_id: parseInt(data.userId) };
+
+            // Make the API request
+            const response = await axiosClient.post("/websites", {
+                customer_id: data.userId, // Assuming userId corresponds to the customer_id field
+                url: data.url,
+                alexa_rank: data.alexaRank, // Include alexaRank from the form data
+                country: data.country,
             });
+
+
+
+            // Check if the request was successful
+            if (response.status === 200 || response.status === 201) {
+                // Show success message using toast
+                toast.success("Website added successfully", {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            } else {
+                // Show error message using toast
+                toast.error("Failed to add website. Please try again.", {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            }
+        } catch (error) {
+            // Show error message using toast
+            toast.error(`Failed to add website: ${error.message}`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
     };
+
+
 
     return (
         <div className="container-fluid">
