@@ -326,8 +326,8 @@ class ComposerStaticInit2d682c93b6042f481b935f25ff6527b2
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-message/src',
-            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+            0 => __DIR__ . '/..' . '/psr/http-factory/src',
+            1 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
         'Psr\\Http\\Client\\' => 
         array (
@@ -517,6 +517,7 @@ class ComposerStaticInit2d682c93b6042f481b935f25ff6527b2
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Api\\AuthController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/AuthController.php',
         'App\\Http\\Controllers\\Api\\CustomerController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/CustomerController.php',
+        'App\\Http\\Controllers\\Api\\ReportController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/ReportController.php',
         'App\\Http\\Controllers\\Api\\WebsiteController' => __DIR__ . '/../..' . '/app/Http/Controllers/Api/WebsiteController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
@@ -532,11 +533,15 @@ class ComposerStaticInit2d682c93b6042f481b935f25ff6527b2
         'App\\Http\\Requests\\CustomerUpdateRequest' => __DIR__ . '/../..' . '/app/Http/Requests/CustomerUpdateRequest.php',
         'App\\Http\\Requests\\LoginRequest' => __DIR__ . '/../..' . '/app/Http/Requests/LoginRequest.php',
         'App\\Http\\Requests\\SignupRequest' => __DIR__ . '/../..' . '/app/Http/Requests/SignupRequest.php',
+        'App\\Http\\Requests\\StoreReportRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreReportRequest.php',
         'App\\Http\\Requests\\StoreWebsitesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/StoreWebsitesRequest.php',
+        'App\\Http\\Requests\\UpdateReportRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateReportRequest.php',
         'App\\Http\\Requests\\UpdateWebsitesRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UpdateWebsitesRequest.php',
         'App\\Http\\Resources\\CustomerResource' => __DIR__ . '/../..' . '/app/Http/Resources/CustomerResource.php',
+        'App\\Http\\Resources\\ReportResource' => __DIR__ . '/../..' . '/app/Http/Resources/ReportResource.php',
         'App\\Http\\Resources\\WebsiteResource' => __DIR__ . '/../..' . '/app/Http/Resources/WebsiteResource.php',
         'App\\Models\\Customer' => __DIR__ . '/../..' . '/app/Models/Customer.php',
+        'App\\Models\\Report' => __DIR__ . '/../..' . '/app/Models/Report.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\Website' => __DIR__ . '/../..' . '/app/Models/Website.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
