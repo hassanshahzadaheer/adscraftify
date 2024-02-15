@@ -13,7 +13,7 @@ class UpdateReportRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,16 @@ class UpdateReportRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required|integer',
+            'website_id' => 'required|integer',
+            'date' => 'required|date',
+            'ad_requests' => 'required|integer',
+            'fill_rate' => 'required|numeric',
+            'ad_impressions' => 'required|integer',
+            'clicks' => 'required|integer',
+            'ctr' => 'required|numeric',
+            'ecpm' => 'required|numeric',
+            'revenue' => 'required|numeric',
         ];
     }
 }

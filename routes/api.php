@@ -3,6 +3,7 @@
 use App\Http\Controllers\Api\AuthController;
 use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\WebsiteController;
+use App\Http\Controllers\Api\ReportController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,3 +29,4 @@ Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::apiResource('/customers', CustomerController::class);
 Route::apiResource('/websites', WebsiteController::class);
+Route::apiResource('/reports',ReportController::class);
