@@ -19,7 +19,10 @@ class ReportController extends Controller
      */
     public function index()
     {
-        $reports = Report::all();
+        // Retrieve all reports with their associated user and website
+        $reports = Report::with('user', 'website')->get();
+
+        // Return a collection of report resources
         return ReportResource::collection($reports);
     }
 

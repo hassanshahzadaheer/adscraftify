@@ -21,5 +21,17 @@ class Report extends Model
         'ecpm',
         'revenue',
     ];
+    // Define the relationship with the User model
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    // Define the relationship with the Website model
+    public function website()
+    {
+        return $this->belongsTo(Website::class);
+    }
+
 
 }

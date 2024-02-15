@@ -20,4 +20,9 @@ class Website extends Model
     {
         return $this->belongsTo(Customer::class, 'customer_id')->withDefault();
     }
+
+    public function reports()
+    {
+        return $this->hasMany(Report::class);
+    }
 }

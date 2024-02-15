@@ -18,6 +18,7 @@ class ReportResource extends JsonResource
             'id' => $this->id,
             'user_id' => $this->user_id,
             'website_id' => $this->website_id,
+            'website' => new WebsiteResource($this->website),
             'date' => $this->date,
             'ad_requests' => $this->ad_requests,
             'fill_rate' => $this->fill_rate,
