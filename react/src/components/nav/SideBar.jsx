@@ -63,6 +63,12 @@ export default function SideBar() {
                 </span>
                                 <span className="hide-menu">Reports</span>
                             </Link>
+                            <Link to="/list-reports" className="sidebar-link" aria-expanded="false">
+    <span>
+        <i className="ti ti-user"></i>
+    </span>
+                                <span className="hide-menu">List Reports</span>
+                            </Link>
                         </li>
                         <li className="sidebar-item">
                             <Link to="/invoice" className="sidebar-link" aria-expanded="false">

@@ -20,7 +20,7 @@ class ReportController extends Controller
     public function index()
     {
         // Retrieve all reports with their associated user and website
-        $reports = Report::with('user', 'website')->get();
+        $reports = Report::with('user', 'website')->orderBy('id', 'desc')->paginate(5);
 
         // Return a collection of report resources
         return ReportResource::collection($reports);
@@ -49,6 +49,18 @@ class ReportController extends Controller
 
             // Return the created report using the resource
             return new ReportResource($report);
+        } catch (ValidationException $e) {
+            // Rollback the transaction on validation failure
+            DB::rollBack();
+
+            return response()->json(['error' => 'Validation error', 'details' => $e->errors()],
+                JsonResponse::HTTP_UNPROCESSABLE_ENTITY);
+        } catch (QueryException $e) {
+            // Rollback the transaction in case of a database-related error
+            DB::rollBack();
+
+            return response()->json(['error' => 'Database error', 'details' => $e->getMessage()],
+                JsonResponse::HTTP_INTERNAL_SERVER_ERROR);
         } catch (\Exception $e) {
             // Rollback the transaction in case of an exception
             DB::rollBack();

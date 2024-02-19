@@ -13,6 +13,7 @@ import AccountInfo from './views/AccountInfo';
 import DefaultLayout from "./components/DefaultLayout"
 import GuestLayout from "./components/GuestLayout";
 import Dashboard from "./views/Dashboard";
+import ListReport from "./views/reports/ListReport.jsx";
 
 const routes = [
     {
@@ -45,6 +46,10 @@ const routes = [
             {
                 path: '/reports',
                 element: <Reports />,
+            },
+            {
+                path: '/list-reports',
+                element: <ListReport />,
             },
             {
                 path: '/invoice',
