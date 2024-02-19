@@ -63,18 +63,64 @@ export default function Reports() {
     };
 
 
-    const onSubmit = (data) => {
-        // Handle form submission
+    const onSubmit = async (data) => {
         console.log(data);
+        try {
+            // Parse the selected user's ID and website ID
+            const userId = parseInt(data.user);
+            const websiteId = parseInt(data.website);
 
-         axiosClient.post("/reports", data)
-           .then(response => {
-             toast.success("Report submitted successfully");
-           })
-           .catch(error => {
-             toast.error("Error submitting report");
-           });
+            // Make sure both IDs are valid integers
+            if (isNaN(userId) || isNaN(websiteId)) {
+                throw new Error("Invalid user or website ID");
+            }
+            // Add the parsed IDs to the report data
+            const reportData = { ...data, user_id: userId, website_id: websiteId };
+
+            // Make the API request to submit the report
+            const response = await axiosClient.post("/reports", reportData);
+
+            // Check if the request was successful
+            if (response.status === 200 || response.status === 201) {
+                // Show success message using toast
+                toast.success("Report submitted successfully", {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            } else {
+                // Show error message using toast
+                toast.error("Failed to submit report. Please try again.", {
+                    position: "bottom-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+            }
+        } catch (error) {
+            // Show error message using toast
+            toast.error(`Failed to submit report: ${error.message}`, {
+                position: "bottom-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+            });
+        }
     };
+
 
     return (
         <div className="container-fluid">
@@ -116,45 +162,44 @@ export default function Reports() {
                             <div className="mb-3">
                                 <label htmlFor="date" className="form-label">Date</label>
                                 <input
-                                    type="text"
+                                    type="date"
                                     id="date"
                                     {...register("date", { required: true })}
                                     className={`form-control ${errors.date ? "is-invalid" : ""}`}
                                 />
-                                {errors.date && <div className="invalid-feedback">Date is required</div>}
                             </div>
 
                             <div className="mb-3">
                                 <label htmlFor="adRequests" className="form-label">Ad Requests</label>
                                 <input
-                                    type="text"
-                                    id="adRequests"
-                                    {...register("adRequests", { required: true })}
-                                    className={`form-control ${errors.adRequests ? "is-invalid" : ""}`}
+                                    type="number" // Use type "number" for numeric input
+                                    id="adRequests" // Use camelCase for consistency with backend field names
+                                    {...register("ad_requests", { required: true })} // Register with correct field name
+                                    className={`form-control ${errors.ad_requests ? "is-invalid" : ""}`}
                                 />
-                                {errors.adRequests && <div className="invalid-feedback">Ad Requests is required</div>}
+                                {errors.ad_requests && <div className="invalid-feedback">Ad Requests is required</div>}
                             </div>
 
                             <div className="mb-3">
                                 <label htmlFor="fillRate" className="form-label">Fill Rate</label>
                                 <input
-                                    type="text"
-                                    id="fillRate"
-                                    {...register("fillRate", { required: true })}
-                                    className={`form-control ${errors.fillRate ? "is-invalid" : ""}`}
+                                    type="number" // Use type "number" for numeric input
+                                    id="fillRate" // Use camelCase for consistency with backend field names
+                                    {...register("fill_rate", { required: true })} // Register with correct field name
+                                    className={`form-control ${errors.fill_rate ? "is-invalid" : ""}`}
                                 />
-                                {errors.fillRate && <div className="invalid-feedback">Fill Rate is required</div>}
+                                {errors.fill_rate && <div className="invalid-feedback">Fill Rate is required</div>}
                             </div>
 
                             <div className="mb-3">
                                 <label htmlFor="adImpressions" className="form-label">Ad Impressions</label>
                                 <input
-                                    type="text"
-                                    id="adImpressions"
-                                    {...register("adImpressions", { required: true })}
-                                    className={`form-control ${errors.adImpressions ? "is-invalid" : ""}`}
+                                    type="number" // Use type "number" for numeric input
+                                    id="adImpressions" // Use camelCase for consistency with backend field names
+                                    {...register("ad_impressions", { required: true })} // Register with correct field name
+                                    className={`form-control ${errors.ad_impressions ? "is-invalid" : ""}`}
                                 />
-                                {errors.adImpressions && <div className="invalid-feedback">Ad Impressions is required</div>}
+                                {errors.ad_impressions && <div className="invalid-feedback">Ad Impressions is required</div>}
                             </div>
 
                             <div className="mb-3">
