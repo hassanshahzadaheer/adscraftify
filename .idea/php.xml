@@ -257,6 +257,31 @@
       <skipped_function name="Illuminate\Routing\Router-&gt;dispatchToRoute" />
       <skipped_function name="Illuminate\Routing\Router-&gt;dispatch" />
       <skipped_function name="Illuminate\Foundation\Http\Kernel-&gt;Illuminate\Foundation\Http\{closure:/Applications/ServBay/ssl/caddy/certificates/local/adscraftify.dev/vendor/laravel/framework/src/Illuminate/Foundation/Http/Kernel.php:164-168}" />
+      <skipped_function name="require" />
+      <skipped_function name="Illuminate\Routing\RouteFileRegistrar-&gt;register" />
+      <skipped_function name="Illuminate\Routing\Router-&gt;loadRoutes" />
+      <skipped_function name="Illuminate\Routing\Router-&gt;group" />
+      <skipped_function name="Illuminate\Routing\RouteRegistrar-&gt;group" />
+      <skipped_function name="App\Providers\RouteServiceProvider-&gt;App\Providers\{closure:/Applications/ServBay/ssl/caddy/certificates/local/adscraftify.dev/app/Providers/RouteServiceProvider.php:40-49}" />
+      <skipped_function name="Illuminate\Container\BoundMethod::Illuminate\Container\{closure:/Applications/ServBay/ssl/caddy/certificates/local/adscraftify.dev/vendor/laravel/framework/src/Illuminate/Container/BoundMethod.php:35-37}" />
+      <skipped_function name="Illuminate\Container\Util::unwrapIfClosure" />
+      <skipped_function name="Illuminate\Container\BoundMethod::callBoundMethod" />
+      <skipped_function name="Illuminate\Container\BoundMethod::call" />
+      <skipped_function name="Illuminate\Foundation\Support\Providers\RouteServiceProvider-&gt;loadRoutes" />
+      <skipped_function name="Illuminate\Foundation\Support\Providers\RouteServiceProvider-&gt;Illuminate\Foundation\Support\Providers\{closure:/Applications/ServBay/ssl/caddy/certificates/local/adscraftify.dev/vendor/laravel/framework/src/Illuminate/Foundation/Support/Providers/RouteServiceProvider.php:39-52}" />
+      <skipped_function name="Illuminate\Support\ServiceProvider-&gt;callBootedCallbacks" />
+      <skipped_function name="Illuminate\Foundation\Application-&gt;bootProvider" />
+      <skipped_function name="Illuminate\Foundation\Application-&gt;Illuminate\Foundation\{closure:/Applications/ServBay/ssl/caddy/certificates/local/adscraftify.dev/vendor/laravel/framework/src/Illuminate/Foundation/Application.php:904-906}" />
+      <skipped_function name="array_walk" />
+      <skipped_function name="Illuminate\Foundation\Application-&gt;boot" />
+      <skipped_function name="Illuminate\Foundation\Bootstrap\BootProviders-&gt;bootstrap" />
+      <skipped_function name="Illuminate\Foundation\Application-&gt;bootstrapWith" />
+      <skipped_function name="Illuminate\Foundation\Http\Kernel-&gt;bootstrap" />
+      <skipped_function name="Illuminate\Foundation\Http\Kernel-&gt;sendRequestThroughRouter" />
+      <skipped_function name="Illuminate\Foundation\Http\Kernel-&gt;handle" />
+      <skipped_function name="Symfony\Component\HttpFoundation\Response-&gt;send" />
+      <skipped_function name="require_once" />
+      <skipped_function name="Illuminate\Foundation\Bootstrap\HandleExceptions-&gt;handleShutdown" />
     </skipped_functions>
   </component>
   <component name="PhpUnit">

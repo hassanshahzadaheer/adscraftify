@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Customer;
+use App\Models\Invoice;
 
 class User extends Authenticatable
 {
@@ -46,4 +47,11 @@ class User extends Authenticatable
     {
         return $this->hasMany(Customer::class);
     }
+    // Define the relationship with the Invoice model
+
+    public function invoices()
+    {
+        return $this->hasMany(Invoice::class);
+    }
+
 }
