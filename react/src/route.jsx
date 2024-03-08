@@ -8,7 +8,7 @@ import ListCustomers from "./views/customers/ListCustomers.jsx";
 import Website from './views/websites/Website.jsx';
 import ListWebsites from "./views/websites/ListWebsites.jsx"
 import Reports from './views/reports/Reports.jsx';
-import Invoice from './views/Invoice';
+import Invoice from './views/invoices/Invoice.jsx';
 import AccountInfo from './views/AccountInfo';
 import DefaultLayout from "./components/DefaultLayout"
 import GuestLayout from "./components/GuestLayout";

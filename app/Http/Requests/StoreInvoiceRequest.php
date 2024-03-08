@@ -25,9 +25,9 @@ class StoreInvoiceRequest extends FormRequest
     {
 
         return [
-            'user_id' => 'required|exists:users,id',
-            'deduction' => 'required|numeric|min:0',
-            'amount' => 'required|numeric|min:0',
+            'user_id' => 'required|integer',
+            'deduction' => 'required|integer|min:0',
+            'amount' => 'required|integer|min:0',
         ];
     }
 }
