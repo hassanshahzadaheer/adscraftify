@@ -5,6 +5,7 @@ use App\Http\Controllers\Api\CustomerController;
 use App\Http\Controllers\Api\WebsiteController;
 use App\Http\Controllers\Api\ReportController;
 use App\Http\Controllers\Api\InvoiceController;
+use App\Http\Controllers\Api\AccountInformationController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -32,3 +33,4 @@ Route::apiResource('/customers', CustomerController::class);
 Route::apiResource('/websites', WebsiteController::class);
 Route::apiResource('/reports',ReportController::class);
 Route::apiResource('/invoices', InvoiceController::class);
+Route::apiResource('/accounts-info', AccountInformationController::class);

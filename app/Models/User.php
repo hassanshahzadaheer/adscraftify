@@ -9,6 +9,7 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Customer;
 use App\Models\Invoice;
+use App\Models\AccountInformation;
 
 class User extends Authenticatable
 {
@@ -54,4 +55,8 @@ class User extends Authenticatable
         return $this->hasMany(Invoice::class);
     }
 
+    public function accountInformation(): HasOne
+    {
+        return $this->hasOne(AccountInformation::class);
+    }
 }
