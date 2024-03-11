@@ -13,7 +13,7 @@ class UpdateAccountInformationRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,18 @@ class UpdateAccountInformationRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id' => 'required|integer',
+            'paypal' => 'nullable|string|max:255',
+            'pioneer_beneficiary_name' => 'nullable|string|max:255',
+            'account_number' => 'nullable|string|max:255',
+            'swift_code' => 'nullable|string|max:255',
+            'iban_number' => 'nullable|string|max:255',
+            'bank_name' => 'nullable|string|max:255',
+            'beneficiary_address' => 'nullable|string|max:255',
+            'postal_code' => 'nullable|string|max:255',
+            'amount' => 'nullable|numeric',
+            'currency' => 'nullable|string|max:255',
+            'date_of_birth' => 'nullable|date',
         ];
     }
 }
