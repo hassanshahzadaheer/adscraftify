@@ -50,6 +50,7 @@ export default function Invoice() {
             // Add the selected user's ID and website ID to the data
             const invoiceData = {
                 user_id: parseInt(data.userId),
+                customer_id: parseInt(data.userId),
                 deduction: parseFloat(data.deduction),
                 amount: parseFloat(data.amount)
             };

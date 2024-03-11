@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreInvoiceRequest;
 use App\Http\Requests\UpdateInvoiceRequest;
 use App\Models\Invoice;
+use App\Models\Customer;
 use App\Http\Resources\InvoiceResource;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\JsonResponse;
@@ -33,6 +34,7 @@ class InvoiceController extends Controller
      */
     public function store(StoreInvoiceRequest $request)
     {
+
         try {
             // Start a database transaction
             DB::beginTransaction();
@@ -42,6 +44,18 @@ class InvoiceController extends Controller
 
             // Create a new invoice using the validated data
             $invoice = Invoice::create($validatedData);
+
+            // Assuming the customer_id is in the request data
+            $customer_id = $request->input('customer_id');
+
+            // Find the customer
+            $customer = Customer::find($customer_id);
+
+            // If the customer exists, associate it with the invoice
+            if ($customer) {
+                $invoice->customer()->associate($customer);
+                $invoice->save();
+            }
 
             // Commit the transaction if everything is successful
             DB::commit();

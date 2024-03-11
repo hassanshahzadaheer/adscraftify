@@ -14,6 +14,7 @@ import DefaultLayout from "./components/DefaultLayout"
 import GuestLayout from "./components/GuestLayout";
 import Dashboard from "./views/Dashboard";
 import ListReport from "./views/reports/ListReport.jsx";
+import InvoiceList from "./views/invoices/InvoiceList.jsx";
 
 const routes = [
     {
@@ -54,6 +55,10 @@ const routes = [
             {
                 path: '/invoice',
                 element: <Invoice />,
+            },
+            {
+                path: '/list-invoice',
+                element: <InvoiceList/>
             },
             {
                 path: '/account-info',

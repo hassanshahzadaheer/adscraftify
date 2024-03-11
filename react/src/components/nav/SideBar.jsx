@@ -77,6 +77,12 @@ export default function SideBar() {
                 </span>
                                 <span className="hide-menu">Invoices</span>
                             </Link>
+                            <Link to="/list-invoice" className="sidebar-link" aria-expanded="false">
+    <span>
+        <i className="ti ti-user"></i>
+    </span>
+                                <span className="hide-menu">List Invoice</span>
+                            </Link>
                         </li>
                         <li className="sidebar-item">
                             <Link to="/account-info" className="sidebar-link" aria-expanded="false">

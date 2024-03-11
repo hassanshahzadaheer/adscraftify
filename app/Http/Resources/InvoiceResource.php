@@ -3,6 +3,8 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Models\Invoice;
+
 
 class InvoiceResource extends JsonResource
 {
@@ -23,8 +25,12 @@ class InvoiceResource extends JsonResource
                 'name' => $this->user->name,
                 'email' => $this->user->email,
             ],
+            'customer' => [
+                'domain' => $this->customer ? $this->customer->domain : null,
+            ],
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];
     }
+
 }

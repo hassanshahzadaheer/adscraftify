@@ -16,12 +16,15 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('customer_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('customer_id')->references('id')->on('customers')->onDelete('cascade');
             $table->decimal('deduction', 8, 2);
             $table->decimal('amount', 8, 2);
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
